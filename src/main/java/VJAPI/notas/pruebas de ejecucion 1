@@ -1,0 +1,54 @@
+# USUARIO
+
+POST http://localhost:8080/vamosJuntos/usuario/agregar
+Content-Type: application/json
+
+{
+  "nombre": "tomas",
+  "apellido": "estrada",
+  "email": "tomasenriquea@hotmail.com"
+}
+
+###
+
+GET http://localhost:8080/vamosJuntos/usuario/mostrar
+
+###
+
+GET http://localhost:8080/vamosJuntos/usuario/mostrar/email/tomasenriquea@hotmail.com
+
+###
+
+PUT http://localhost:8080/vamosJuntos/usuario/actualizar
+Content-Type: application/json
+
+{
+  "nombre": "enrique",
+  "apellido": "torres",
+  "email": "tomasenriquea@hotmail.com"
+}
+
+###
+
+DELETE http://localhost:8080/vamosJuntos/usuario/eliminar/tomasenriquea@hotmail.com
+
+###
+
+
+########################################################################################################################
+
+# EVENTO
+
+
+
+
+
+
+
+
+
+
+
+
+
+

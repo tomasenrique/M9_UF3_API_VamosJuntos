@@ -1,0 +1,49 @@
+Hay que hacer la API para la aplicación Vamos Juntos del módulo M7.
+
+Al menos deberíamos tener las entidades:
+
+Evento
+------------------
+Id
+NombreEvento
+Recinto
+Ciudad
+Fecha
+Hora
+PathImagen
+InfoComplementaria
+
+
+
+Coche
+-------------------------
+Id
+TelfPropietario
+tipoVehiculo
+modelo
+ano
+puntoSalida
+HoraSalida
+numPlazasLibres
+numPlazasOcupadas
+InfoComplementaria
+
+IdEvento        ==>> clase evento
+Propietario     ==>> clase usuario
+
+
+
+usuario
+------------------------
+Id
+nombre
+Apellidos
+email
+
+
+=====================================================================
+clase a implementar en la api
+
+coche
+evento
+usuario

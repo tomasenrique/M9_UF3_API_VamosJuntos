@@ -34,20 +34,56 @@ DELETE http://localhost:8080/vamosJuntos/usuario/eliminar/tomasenriquea@hotmail.
 
 ###
 
-
 ########################################################################################################################
 
 # EVENTO
 
+POST http://localhost:8080/vamosJuntos/evento/agregar
+Content-Type: application/json
 
+{
+  "nombre_evento": "otra cosa",
+  "recinto": "mi casa",
+  "ciudad": "barcelona",
+  "path_imagen": "ubicacion imagen",
+  "info_complementaria_evento": "otras cosas"
+}
 
+###
 
+GET http://localhost:8080/vamosJuntos/evento/mostrar
 
+###
 
+GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-10
 
+###
 
+GET http://localhost:8080/vamosJuntos/evento/mostrar/ciudad/barcelona
 
+###
 
+PUT http://localhost:8080/vamosJuntos/evento/actualizar
+Content-Type: application/json
+
+{
+  "id_evento": 3,
+  "nombre_evento": "otra actualizado",
+  "recinto": "mi actualizado",
+  "ciudad": "barcelona actualizado",
+  "path_imagen": "ubicacion imagen actualizado",
+  "info_complementaria_evento": "otras cosas actualizado"
+}
+
+###
+
+DELETE http://localhost:8080/vamosJuntos/evento/eliminar?idEvento=1
+
+###
+
+########################################################################################################################
+
+# COCHE
 
 
 

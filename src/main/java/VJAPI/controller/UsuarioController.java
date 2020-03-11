@@ -34,7 +34,7 @@ public class UsuarioController {
     public Iterable<Usuario> getAllUsers() {
         // Esto devuelve un JSON o XML con los usuarios.
         try {
-            return usuarioRepository.findAll(); // devuelve la lista de clientes
+            return usuarioRepository.findAll(); // devuelve la lista de usuarios
         } catch (DataIntegrityViolationException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No hay usuarios registrados");
         }
@@ -44,16 +44,16 @@ public class UsuarioController {
     // Busca un Usuario por su email
     @GetMapping("/mostrar/email/{emailUsuario}")
     @ResponseBody
-    public Usuario getClientByDni(@PathVariable String emailUsuario) {
+    public Usuario getUserByEmail(@PathVariable String emailUsuario) {
         Usuario buscarUsuario = usuarioRepository.findUsuarioByEmail(emailUsuario);
         if (buscarUsuario != null) {
-            return buscarUsuario; // Devuelve un cliente buscado por su dni
+            return buscarUsuario; // Devuelve un usuario buscado por su email
         } else throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe el usuario.");
     }
 
-    // Actualizar datos de usuario, buscado por su dni
+    // Actualizar datos de usuario, buscado por su email
     @PutMapping("/actualizar")
-    public String UpdateClient(@RequestBody Usuario usuario) {
+    public String UpdateUser(@RequestBody Usuario usuario) {
         Usuario buscarUsuarioActualizar = usuarioRepository.findUsuarioByEmail(usuario.getEmail());
         if (buscarUsuarioActualizar != null) {
             buscarUsuarioActualizar.setNombre(usuario.getNombre());
@@ -66,7 +66,7 @@ public class UsuarioController {
 
     // Eliminar un usuario buscado por su email y eliminado por su id
     @DeleteMapping("/eliminar/{emailUsuario}")
-    public String deleteClient(@PathVariable String emailUsuario) {
+    public String deleteUser(@PathVariable String emailUsuario) {
         Usuario usuarioEliminar = usuarioRepository.findUsuarioByEmail(emailUsuario);
         if (usuarioEliminar != null) {
             this.usuarioRepository.deleteById(usuarioEliminar.getId_usuario());

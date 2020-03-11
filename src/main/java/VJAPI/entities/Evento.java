@@ -14,9 +14,9 @@ public class Evento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_evento;
-    protected String nombre_evento;
-    private String recinto;
-    private String ciudad;
+    private String nombre_evento; // lugar o accion a realizar con el coche
+    private String recinto; // ubicacion donde va el coche
+    private String ciudad; // lugar donde se obtiene el coche
     private LocalDate fecha; // Solo fecha yyyy-MM-dd
     private LocalTime hora; // Solo hora HH:mm:ss
     private String path_imagen; // ubicacion de una imagen en el servidor

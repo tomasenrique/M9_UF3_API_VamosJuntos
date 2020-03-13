@@ -19,6 +19,8 @@ public class Usuario implements Serializable {
     @Column(unique = true)
     private String email;
 
+    @OneToMany(mappedBy = "id_usuario", cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Coche.class)
+    private List<Coche> listaCoches = new ArrayList<>();
 
     // Builders
     public Usuario() {

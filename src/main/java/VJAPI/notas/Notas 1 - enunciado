@@ -28,7 +28,7 @@ numPlazasLibres
 numPlazasOcupadas
 InfoComplementaria
 
-IdEvento        ==>> clase evento
+IdEvento        ==>> clase evento ==> eliminar para crear la clase reserva
 Propietario     ==>> clase usuario
 
 
@@ -41,9 +41,23 @@ Apellidos
 email
 
 
-=====================================================================
-clase a implementar en la api
 
-coche
-evento
-usuario
+reserva
+-----------------------
+id_reserva
+
+id_evento   ==>> clase evento
+id_coche    ==>> clase coche
+
+
+
+
+
+=====================================================================
+Crear una clase reserva que contenga id_evento e id_coche
+
+
+
+Relacion N:M entre Evento y Coche
+
+

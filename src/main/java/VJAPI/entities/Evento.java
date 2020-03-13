@@ -1,12 +1,11 @@
 package VJAPI.entities;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Evento implements Serializable {
@@ -21,6 +20,9 @@ public class Evento implements Serializable {
     private LocalTime hora; // Solo hora HH:mm:ss
     private String path_imagen; // ubicacion de una imagen en el servidor
     private String info_complementaria_evento;
+
+    @OneToMany(mappedBy = "id_evento", cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Reserva.class)
+    private List<Reserva> listaEventoReserva = new ArrayList<>();
 
     // Builders
     public Evento() {
@@ -99,5 +101,13 @@ public class Evento implements Serializable {
 
     public void setInfo_complementaria_evento(String info_complementaria_evento) {
         this.info_complementaria_evento = info_complementaria_evento;
+    }
+
+    public List<Reserva> getListaEventoReserva() {
+        return listaEventoReserva;
+    }
+
+    public void setListaEventoReserva(List<Reserva> listaEventoReserva) {
+        this.listaEventoReserva = listaEventoReserva;
     }
 }

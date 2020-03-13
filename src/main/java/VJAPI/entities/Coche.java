@@ -2,12 +2,14 @@ package VJAPI.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 
-//@Entity
+@Entity
 public class Coche implements Serializable {
 
-    //@Id
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_coche;
     private String telf_propietario;
     private String tipo_vehiculo;
@@ -18,20 +20,18 @@ public class Coche implements Serializable {
     private int num_plazas_ocupadas;
     private String info_complementaria_coche;
 
-
-
-    private Evento id_evento;
-
-
-
+    @ManyToOne(targetEntity = Usuario.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @JoinColumn(name = "id_usuario") // campo o columna a crear en la tabla
     private Usuario id_usuario;
 
+    @OneToMany(mappedBy = "id_coche", cascade = CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = Reserva.class)
+    private List<Reserva> listaCocheReserva = new ArrayList<>();
 
     // Builders
     public Coche() {
     }
 
-    public Coche(String telf_propietario, String tipo_vehiculo, String modelo, String anyo, String punto_salida, int num_plazas_libres, int num_plazas_ocupadas, String info_complementaria_coche, Evento id_evento, Usuario id_usuario) {
+    public Coche(String telf_propietario, String tipo_vehiculo, String modelo, String anyo, String punto_salida, int num_plazas_libres, int num_plazas_ocupadas, String info_complementaria_coche, Usuario id_usuario) {
         this.telf_propietario = telf_propietario;
         this.tipo_vehiculo = tipo_vehiculo;
         this.modelo = modelo;
@@ -40,7 +40,6 @@ public class Coche implements Serializable {
         this.num_plazas_libres = num_plazas_libres;
         this.num_plazas_ocupadas = num_plazas_ocupadas;
         this.info_complementaria_coche = info_complementaria_coche;
-        this.id_evento = id_evento;
         this.id_usuario = id_usuario;
     }
 
@@ -117,19 +116,19 @@ public class Coche implements Serializable {
         this.info_complementaria_coche = info_complementaria_coche;
     }
 
-    public Evento getId_evento() {
-        return id_evento;
-    }
-
-    public void setId_evento(Evento id_evento) {
-        this.id_evento = id_evento;
-    }
-
     public Usuario getId_usuario() {
         return id_usuario;
     }
 
     public void setId_usuario(Usuario id_usuario) {
         this.id_usuario = id_usuario;
+    }
+
+    public List<Reserva> getListaCocheReserva() {
+        return listaCocheReserva;
+    }
+
+    public void setListaCocheReserva(List<Reserva> listaCocheReserva) {
+        this.listaCocheReserva = listaCocheReserva;
     }
 }

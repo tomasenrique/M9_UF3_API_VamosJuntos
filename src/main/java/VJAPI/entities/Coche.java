@@ -1,6 +1,7 @@
 package VJAPI.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,11 @@ public class Coche implements Serializable {
     private String tipo_vehiculo;
     private String modelo;
     private String anyo;
+
+    @Size(max = 20)
+    @Column(unique = true)
+    private String matricula; // Se agrega este campo para poder ubicar un coche especifico
+
     private String punto_salida; // punto de salida (ciudad donde sale el coche)
     private int num_plazas_libres;
     private int num_plazas_ocupadas;
@@ -31,11 +37,12 @@ public class Coche implements Serializable {
     public Coche() {
     }
 
-    public Coche(String telf_propietario, String tipo_vehiculo, String modelo, String anyo, String punto_salida, int num_plazas_libres, int num_plazas_ocupadas, String info_complementaria_coche, Usuario id_usuario) {
+    public Coche(String telf_propietario, String tipo_vehiculo, String modelo, String anyo, String matricula, String punto_salida, int num_plazas_libres, int num_plazas_ocupadas, String info_complementaria_coche, Usuario id_usuario) {
         this.telf_propietario = telf_propietario;
         this.tipo_vehiculo = tipo_vehiculo;
         this.modelo = modelo;
         this.anyo = anyo;
+        this.matricula = matricula;
         this.punto_salida = punto_salida;
         this.num_plazas_libres = num_plazas_libres;
         this.num_plazas_ocupadas = num_plazas_ocupadas;
@@ -130,5 +137,13 @@ public class Coche implements Serializable {
 
     public void setListaCocheReserva(List<Reserva> listaCocheReserva) {
         this.listaCocheReserva = listaCocheReserva;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 }

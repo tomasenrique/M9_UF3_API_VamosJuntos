@@ -2,18 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b204bde1-ff65-4b65-b724-1be9dc7350d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Reserva.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/VJAPI/controller/CocheController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/VJAPI/repositorys/CocheRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/datos_vamos_juntos.sql" beforeDir="false" afterPath="$PROJECT_DIR$/datos_vamos_juntos.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/VJAPI/controller/EventoController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VJAPI/controller/EventoController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/VJAPI/controller/UsuarioController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VJAPI/controller/UsuarioController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/VJAPI/entities/Coche.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VJAPI/entities/Coche.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/VJAPI/entities/Evento.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VJAPI/entities/Evento.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/classes/VJAPI/entities/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VJAPI/entities/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/classes/VJAPI/repositorys/UsuarioRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/classes/VJAPI/repositorys/UsuarioRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/controller/EventoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/controller/UsuarioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/controller/UsuarioController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Coche.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Coche.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Evento.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/entities/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/notas/Notas 1 - enunciado" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/notas/Notas 1 - enunciado" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/notas/pruebas de ejecucion 1" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/notas/pruebas de ejecucion 1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/VJAPI/repositorys/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/VJAPI/repositorys/UsuarioRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,8 +35,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -72,7 +78,299 @@
       <list>
         <RestClientRequest>
           <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/mostrar/matricula/2001GSW" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/mostrar" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/eliminar" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="matricula" />
+                <option name="value" value="2001GSW" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="matricula" />
+                <option name="value" value="2001GSW" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/matricula/2001GSW" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/actualizar" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;telf_propietario&quot;: &quot;123456789&quot;,&#10;  &quot;tipo_vehiculo&quot;: &quot;moto&quot;,&#10;  &quot;modelo&quot;: &quot;harley A1&quot;,&#10;  &quot;anyo&quot;: &quot;1990&quot;,&#10;  &quot;matricula&quot;: &quot;2001GSW&quot;,&#10;  &quot;punto_salida&quot;: &quot;barcelona&quot;,&#10;  &quot;num_plazas_libres&quot;: &quot;2&quot;,&#10;  &quot;num_plazas_ocupadas&quot;: &quot;1&quot;,&#10;  &quot;info_complementaria_coche&quot;: &quot;viaje de barcelona a madrid&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/actualizar" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;telf_propietario&quot;: &quot;123456789&quot;,&#10;  &quot;tipo_vehiculo&quot;: &quot;moto&quot;,&#10;  &quot;modelo&quot;: &quot;harley A1&quot;,&#10;  &quot;anyo&quot;: &quot;1990&quot;,&#10;  &quot;matricula&quot;: &quot;9009GSW&quot;,&#10;  &quot;punto_salida&quot;: &quot;barcelona&quot;,&#10;  &quot;num_plazas_libres&quot;: &quot;2&quot;,&#10;  &quot;num_plazas_ocupadas&quot;: &quot;1&quot;,&#10;  &quot;info_complementaria_coche&quot;: &quot;viaje de barcelona a madrid&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/coche/agregar" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="dniUsuario" />
+                <option name="value" value="43588075Q" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;telf_propietario&quot;: &quot;987456321&quot;,&#10;  &quot;tipo_vehiculo&quot;: &quot;automovil&quot;,&#10;  &quot;modelo&quot;: &quot;audi A1&quot;,&#10;  &quot;anyo&quot;: &quot;2000&quot;,&#10;  &quot;matricula&quot;: &quot;2001GSW&quot;,&#10;  &quot;punto_salida&quot;: &quot;Madrid&quot;,&#10;  &quot;num_plazas_libres&quot;: &quot;4&quot;,&#10;  &quot;num_plazas_ocupadas&quot;: &quot;1&quot;,&#10;  &quot;info_complementaria_coche&quot;: &quot;viaje de madrid a barcelona&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/eliminar" />
+          <option name="urlPath" value="" />
+          <option name="parameters">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="idEvento" />
+                <option name="value" value="6" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="parametersEnabled" value="true" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/actualizar" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;id_evento&quot;: 6,&#10;  &quot;nombre_evento&quot;: &quot;otra actualizado&quot;,&#10;  &quot;recinto&quot;: &quot;mi actualizado&quot;,&#10;  &quot;ciudad&quot;: &quot;barcelona actualizado&quot;,&#10;  &quot;path_imagen&quot;: &quot;ubicacion imagen actualizado&quot;,&#10;  &quot;info_complementaria_evento&quot;: &quot;otras cosas actualizado&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar/ciudad/barcelona" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-14" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/agregar" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;nombre_evento&quot;: &quot;otra cosa&quot;,&#10;  &quot;recinto&quot;: &quot;mi casa&quot;,&#10;  &quot;ciudad&quot;: &quot;barcelona&quot;,&#10;  &quot;path_imagen&quot;: &quot;ubicacion imagen&quot;,&#10;  &quot;info_complementaria_evento&quot;: &quot;otras cosas&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
           <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-13" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-10" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/eliminar/dni/43588075Q" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="POST" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/agregar" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;nombre&quot;: &quot;tomas&quot;,&#10;  &quot;apellido&quot;: &quot;estrada&quot;,&#10;  &quot;dni&quot;: &quot;43588075Q&quot;,&#10;  &quot;email&quot;: &quot;tomasenriquea@hotmail.com&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="DELETE" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/eliminar/email/gato@live.com" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/actualizar/email" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;nombre&quot;: &quot;enrique&quot;,&#10;  &quot;apellido&quot;: &quot;torres&quot;,&#10;  &quot;dni&quot;: &quot;43588075Q&quot;,&#10;  &quot;email&quot;: &quot;gato@live.com&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/actualizar/dni" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;nombre&quot;: &quot;enrique&quot;,&#10;  &quot;apellido&quot;: &quot;torres&quot;,&#10;  &quot;dni&quot;: &quot;12345678A&quot;,&#10;  &quot;email&quot;: &quot;gato@live.com&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="PUT" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/actualizar/dni" />
+          <option name="urlPath" value="" />
+          <option name="headers">
+            <list>
+              <KeyValuePair>
+                <option name="key" value="Content-Type" />
+                <option name="value" value="application/json" />
+              </KeyValuePair>
+            </list>
+          </option>
+          <option name="haveTextToSend" value="true" />
+          <option name="textToSend" value="{&#10;  &quot;nombre&quot;: &quot;enrique&quot;,&#10;  &quot;apellido&quot;: &quot;torres&quot;,&#10;  &quot;dni&quot;: &quot;12345678A&quot;,&#10;  &quot;email&quot;: &quot;tomasenriquea@hotmail.com&quot;&#10;}" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/mostrar/dni/43588075Q" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/mostrar/dni/435588075Q" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/mostrar/email/tomasenriquea@hotmail.com" />
+          <option name="urlPath" value="" />
+          <option name="textToSend" value="" />
+          <option name="filesToSend" value="" />
+        </RestClientRequest>
+        <RestClientRequest>
+          <option name="httpMethod" value="GET" />
+          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/mostrar" />
           <option name="urlPath" value="" />
           <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
@@ -114,36 +412,6 @@
           </option>
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&#10;  &quot;id_evento&quot;: 3,&#10;  &quot;nombre_evento&quot;: &quot;otra actualizado&quot;,&#10;  &quot;recinto&quot;: &quot;mi actualizado&quot;,&#10;  &quot;ciudad&quot;: &quot;barcelona actualizado&quot;,&#10;  &quot;path_imagen&quot;: &quot;ubicacion imagen actualizado&quot;,&#10;  &quot;info_complementaria_evento&quot;: &quot;otras cosas actualizado&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar/ciudad/barcelona" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-10" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="POST" />
-          <option name="urlBase" value="http://localhost:8080/vamosJuntos/evento/agregar" />
-          <option name="urlPath" value="" />
-          <option name="headers">
-            <list>
-              <KeyValuePair>
-                <option name="key" value="Content-Type" />
-                <option name="value" value="application/json" />
-              </KeyValuePair>
-            </list>
-          </option>
-          <option name="haveTextToSend" value="true" />
-          <option name="textToSend" value="{&#10;  &quot;nombre_evento&quot;: &quot;otra cosa&quot;,&#10;  &quot;recinto&quot;: &quot;mi casa&quot;,&#10;  &quot;ciudad&quot;: &quot;barcelona&quot;,&#10;  &quot;path_imagen&quot;: &quot;ubicacion imagen&quot;,&#10;  &quot;info_complementaria_evento&quot;: &quot;otras cosas&quot;&#10;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -197,13 +465,6 @@
           </option>
           <option name="haveTextToSend" value="true" />
           <option name="textToSend" value="{&#10;  &quot;nombre_evento&quot;: &quot;viaje&quot;,&#10;  &quot;recinto&quot;: &quot;fira de barcelona&quot;,&#10;  &quot;ciudad&quot;: &quot;barcelona&quot;,&#10;  &quot;path_imagen&quot;: &quot;ubicacion imagen&quot;,&#10;  &quot;info_complementaria_evento&quot;: &quot;personas llendo de viaje a ver la comigcon de barcelona&quot;&#10;}" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/mostrar" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
         <RestClientRequest>
@@ -284,27 +545,20 @@
           <option name="textToSend" value="{&#10;  &quot;nombre&quot;: &quot;enrique&quot;,&#10;  &quot;apellido&quot;: &quot;torres&quot;,&#10;  &quot;email&quot;: &quot;enrique@live.com&quot;&#10;}" />
           <option name="filesToSend" value="" />
         </RestClientRequest>
-        <RestClientRequest>
-          <option name="httpMethod" value="GET" />
-          <option name="urlBase" value="http://localhost:8080/vamosJuntos/usuario/mostrar/email/tomasenriquea@hotmail.com" />
-          <option name="urlPath" value="" />
-          <option name="textToSend" value="" />
-          <option name="filesToSend" value="" />
-        </RestClientRequest>
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.StartApp">
-    <configuration name="rest-api_26#10" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="10" runType="Run single request">
+  <component name="RunManager" selected="HTTP Request.rest-api_26#17">
+    <configuration name="rest-api_26#16" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="16" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api_26#11" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="11" runType="Run single request">
+    <configuration name="rest-api_26#17" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="17" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api_26#7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="7" runType="Run single request">
+    <configuration name="rest-api_26#18" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="18" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="rest-api_26#9" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="9" runType="Run single request">
+    <configuration name="rest-api_26#19" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" path="$APPLICATION_CONFIG_DIR$/scratches/rest-api_26.http" index="19" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="StartApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
@@ -322,11 +576,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="HTTP Request.rest-api_26#17" />
+        <item itemvalue="HTTP Request.rest-api_26#16" />
+        <item itemvalue="HTTP Request.rest-api_26#19" />
         <item itemvalue="Spring Boot.StartApp" />
-        <item itemvalue="HTTP Request.rest-api_26#7" />
-        <item itemvalue="HTTP Request.rest-api_26#11" />
-        <item itemvalue="HTTP Request.rest-api_26#10" />
-        <item itemvalue="HTTP Request.rest-api_26#9" />
+        <item itemvalue="HTTP Request.rest-api_26#18" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +610,11 @@
       <workItem from="1583768760290" duration="8245000" />
       <workItem from="1583857224841" duration="5484000" />
       <workItem from="1583938291647" duration="11124000" />
-      <workItem from="1584067081519" duration="4593000" />
+      <workItem from="1584067081519" duration="6264000" />
+      <workItem from="1584077019254" duration="2678000" />
+      <workItem from="1584205731783" duration="11238000" />
+      <workItem from="1584219242602" duration="6640000" />
+      <workItem from="1584226058858" duration="4754000" />
     </task>
     <servers />
   </component>
@@ -371,54 +629,54 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="491" y="220" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1583776137487" />
-    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1584071566614">
+    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser" timestamp="1584213281770">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1584071566614" />
-    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1584068644198">
+    <state x="574" y="133" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1584213281770" />
+    <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1584226175411">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1584068644198" />
-    <state width="1493" height="400" key="GridCell.Tab.0.bottom" timestamp="1584070922584">
+    <state x="549" y="172" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1584226175411" />
+    <state width="1493" height="278" key="GridCell.Tab.0.bottom" timestamp="1584236200382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1584070922584" />
-    <state width="1493" height="400" key="GridCell.Tab.0.center" timestamp="1584070922584">
+    <state width="1493" height="278" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1584236200382" />
+    <state width="1493" height="278" key="GridCell.Tab.0.center" timestamp="1584236200380">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1584070922584" />
-    <state width="1493" height="400" key="GridCell.Tab.0.left" timestamp="1584070922584">
+    <state width="1493" height="278" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1584236200380" />
+    <state width="1493" height="278" key="GridCell.Tab.0.left" timestamp="1584236200378">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1584070922584" />
-    <state width="1493" height="400" key="GridCell.Tab.0.right" timestamp="1584070922584">
+    <state width="1493" height="278" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1584236200378" />
+    <state width="1493" height="278" key="GridCell.Tab.0.right" timestamp="1584236200381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1584070922584" />
-    <state width="1493" height="400" key="GridCell.Tab.1.bottom" timestamp="1584070922585">
+    <state width="1493" height="278" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1584236200381" />
+    <state width="1493" height="278" key="GridCell.Tab.1.bottom" timestamp="1584236041383">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1584070922585" />
-    <state width="1493" height="400" key="GridCell.Tab.1.center" timestamp="1584070922585">
+    <state width="1493" height="278" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1584236041383" />
+    <state width="1493" height="278" key="GridCell.Tab.1.center" timestamp="1584236041381">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1584070922585" />
-    <state width="1493" height="400" key="GridCell.Tab.1.left" timestamp="1584070922584">
+    <state width="1493" height="278" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1584236041381" />
+    <state width="1493" height="278" key="GridCell.Tab.1.left" timestamp="1584236041380">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1584070922584" />
-    <state width="1493" height="400" key="GridCell.Tab.1.right" timestamp="1584070922585">
+    <state width="1493" height="278" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1584236041380" />
+    <state width="1493" height="278" key="GridCell.Tab.1.right" timestamp="1584236041382">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1493" height="400" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1584070922585" />
+    <state width="1493" height="278" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1584236041382" />
     <state x="277" y="59" key="SettingsEditor" timestamp="1583768772079">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="277" y="59" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1583768772079" />
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1584067125094">
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog" timestamp="1584226059388">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1584067125094" />
+    <state x="465" y="241" key="com.intellij.ide.util.TipDialog/0.0.1536.834@0.0.1536.834" timestamp="1584226059388" />
     <state x="209" y="29" key="new project wizard" timestamp="1583941257526">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

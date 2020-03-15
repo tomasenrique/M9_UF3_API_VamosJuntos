@@ -6,6 +6,7 @@ Content-Type: application/json
 {
   "nombre": "tomas",
   "apellido": "estrada",
+  "dni": "43588075Q",
   "email": "tomasenriquea@hotmail.com"
 }
 
@@ -19,18 +20,41 @@ GET http://localhost:8080/vamosJuntos/usuario/mostrar/email/tomasenriquea@hotmai
 
 ###
 
-PUT http://localhost:8080/vamosJuntos/usuario/actualizar
+GET http://localhost:8080/vamosJuntos/usuario/mostrar/dni/43588075Q
+
+###
+
+# Actualiza el email por medio de la busqueda del dni
+PUT http://localhost:8080/vamosJuntos/usuario/actualizar/email
 Content-Type: application/json
 
 {
   "nombre": "enrique",
   "apellido": "torres",
-  "email": "tomasenriquea@hotmail.com"
+  "dni": "43588075Q",
+  "email": "gato@live.com"
 }
 
 ###
 
-DELETE http://localhost:8080/vamosJuntos/usuario/eliminar/tomasenriquea@hotmail.com
+# Actualiza el dni por medio de la busqueda del email
+PUT http://localhost:8080/vamosJuntos/usuario/actualizar/dni
+Content-Type: application/json
+
+{
+  "nombre": "enrique",
+  "apellido": "torres",
+  "dni": "12345678A",
+  "email": "gato@live.com"
+}
+
+###
+
+DELETE http://localhost:8080/vamosJuntos/usuario/eliminar/dni/43588075Q
+
+###
+
+DELETE http://localhost:8080/vamosJuntos/usuario/eliminar/email/gato@live.com
 
 ###
 
@@ -55,7 +79,7 @@ GET http://localhost:8080/vamosJuntos/evento/mostrar
 
 ###
 
-GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-10
+GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-14
 
 ###
 
@@ -67,7 +91,7 @@ PUT http://localhost:8080/vamosJuntos/evento/actualizar
 Content-Type: application/json
 
 {
-  "id_evento": 3,
+  "id_evento": 6,
   "nombre_evento": "otra actualizado",
   "recinto": "mi actualizado",
   "ciudad": "barcelona actualizado",
@@ -77,13 +101,60 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/vamosJuntos/evento/eliminar?idEvento=1
+DELETE http://localhost:8080/vamosJuntos/evento/eliminar?idEvento=6
 
 ###
 
 ########################################################################################################################
 
 # COCHE
+
+POST http://localhost:8080/vamosJuntos/coche/agregar?dniUsuario=43588075Q
+Content-Type: application/json
+
+{
+  "telf_propietario": "987456321",
+  "tipo_vehiculo": "automovil",
+  "modelo": "audi A1",
+  "anyo": "2000",
+  "matricula": "2001GSW",
+  "punto_salida": "Madrid",
+  "num_plazas_libres": "4",
+  "num_plazas_ocupadas": "1",
+  "info_complementaria_coche": "viaje de madrid a barcelona"
+}
+
+###
+
+GET http://localhost:8080/vamosJuntos/coche/mostrar
+
+###
+
+GET http://localhost:8080/vamosJuntos/coche/mostrar/matricula/2001GSW
+
+###
+
+PUT http://localhost:8080/vamosJuntos/coche/actualizar
+Content-Type: application/json
+
+{
+  "telf_propietario": "123456789",
+  "tipo_vehiculo": "moto",
+  "modelo": "harley A1",
+  "anyo": "1990",
+  "matricula": "2001GSW",
+  "punto_salida": "barcelona",
+  "num_plazas_libres": "2",
+  "num_plazas_ocupadas": "1",
+  "info_complementaria_coche": "viaje de barcelona a madrid"
+}
+
+###
+
+DELETE http://localhost:8080/vamosJuntos/coche/eliminar?matricula=2001GSW
+
+########################################################################################################################
+
 
 
 

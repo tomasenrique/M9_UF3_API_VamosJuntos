@@ -5,7 +5,7 @@ Al menos deberíamos tener las entidades:
 Evento
 ------------------
 Id
-NombreEvento ==>> lugar o accrion a realizar con el coche
+NombreEvento ==>> lugar o accion a realizar con el coche
 Recinto ==>> ubicacion donde va el coche
 Ciudad
 Fecha

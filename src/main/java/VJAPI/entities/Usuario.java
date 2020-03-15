@@ -15,6 +15,10 @@ public class Usuario implements Serializable {
     private String nombre;
     private String apellido;
 
+    @Size(max = 20)
+    @Column(unique = true)
+    private String dni;
+
     @Size(max = 50)
     @Column(unique = true)
     private String email;
@@ -26,9 +30,10 @@ public class Usuario implements Serializable {
     public Usuario() {
     }
 
-    public Usuario(String nombre, String apellido, String email) {
+    public Usuario(String nombre, String apellido, @Size(max = 20) String dni, @Size(max = 50) String email) {
         this.nombre = nombre;
         this.apellido = apellido;
+        this.dni = dni;
         this.email = email;
     }
 
@@ -63,5 +68,13 @@ public class Usuario implements Serializable {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 }

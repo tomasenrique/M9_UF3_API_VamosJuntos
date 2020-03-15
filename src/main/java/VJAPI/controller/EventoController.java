@@ -2,21 +2,23 @@ package VJAPI.controller;
 
 import VJAPI.entities.Evento;
 import VJAPI.repositorys.EventoRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
-import java.awt.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/vamosJuntos/evento")
 public class EventoController {
+
+    private static final Logger log = LoggerFactory.getLogger(EventoController.class);
 
     @Autowired
     EventoRepository eventoRepository;
@@ -28,6 +30,7 @@ public class EventoController {
     public String addEvent(@RequestBody Evento evento) {
         try {
             evento.setFecha(LocalDate.now());
+            log.info("fecha: " + LocalDate.now());
             evento.setHora(LocalTime.now());
             eventoRepository.save(evento);
             return "Evento guardado en base de datos";
@@ -54,6 +57,7 @@ public class EventoController {
     @ResponseBody
     public Iterable<Evento> getAllEventsByFecha(@PathVariable String fechaEvento) {
         try {
+            log.info("fecha obtenida: " + LocalDate.parse(fechaEvento));
             return eventoRepository.findEventoByFecha(LocalDate.parse(fechaEvento));
         } catch (DataIntegrityViolationException e) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No hay eventos registrados con esa fecha");
@@ -102,17 +106,5 @@ public class EventoController {
             return "Evento borrado.";
         }else return "El evento a borrar no existe.";
     }
-
-
-
-
-
-
-
-
-
-
-
-
 
 }

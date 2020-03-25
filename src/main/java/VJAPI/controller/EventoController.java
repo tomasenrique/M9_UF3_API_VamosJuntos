@@ -12,7 +12,6 @@ import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.Optional;
 
 @RestController
 @RequestMapping(path = "/vamosJuntos/evento")
@@ -75,13 +74,23 @@ public class EventoController {
         }
     }
 
-    // Actualiza los datos de un evento por medio de su id
+    // Mostrara un evento por medio de su referencia
+    @GetMapping("/mostrar/referencia/{referenciaEvento}")
+    @ResponseBody
+    public Evento getEventByReferencia(@PathVariable String referenciaEvento) {
+        Evento eventoBuscado = eventoRepository.findEventoByReferencia(referenciaEvento); // buca el evento por su referencia
+        if (eventoBuscado != null) {
+            return eventoBuscado;
+        } else throw new ResponseStatusException(HttpStatus.NOT_FOUND, "No existe el evento solicitado.");
+    }
+
+    // Actualiza los datos de un evento por medio de su referencia
     @PutMapping("/actualizar")
     @ResponseBody
     public String updateEvent(@RequestBody Evento evento) {
-        Optional<Evento> eventoBuscado = eventoRepository.findById(evento.getId_evento()); // se obtiene el evento por su id
-        if (eventoBuscado.isPresent()){
-            Evento eventoActualizar = eventoBuscado.get();
+        Evento eventoActualizar = eventoRepository.findEventoByReferencia(evento.getReferencia());
+
+        if (eventoActualizar != null) {
             // Obteniendo los datos para actualizar el evento
             eventoActualizar.setNombre_evento(evento.getNombre_evento());
             eventoActualizar.setRecinto(evento.getRecinto());
@@ -96,15 +105,16 @@ public class EventoController {
         } else return "El evento a actualizar no existe.";
     }
 
-    // Se borra un evento por medio de su id
-    @DeleteMapping("/eliminar")
+    // Se borra un evento por buscado por su referencia y eliminado por su id
+    @DeleteMapping("/eliminar/referencia/{referenciaEvento}")
     @ResponseBody
-    public String deleteEvent(@RequestParam Long idEvento) {
-        Optional<Evento> eventoBuscado = eventoRepository.findById(idEvento); // se obtiene el evento por su id
-        if (eventoBuscado.isPresent()){
-            eventoRepository.deleteById(idEvento);
+    public String deleteEvent(@PathVariable String referenciaEvento) {
+        Evento eventoEliminar = eventoRepository.findEventoByReferencia(referenciaEvento);
+
+        if (eventoEliminar != null) {
+            eventoRepository.deleteById(eventoEliminar.getId_evento());
             return "Evento borrado.";
-        }else return "El evento a borrar no existe.";
+        } else return "El evento a borrar no existe.";
     }
 
 }

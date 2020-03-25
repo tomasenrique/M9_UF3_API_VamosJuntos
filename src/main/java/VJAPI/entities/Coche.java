@@ -15,7 +15,7 @@ public class Coche implements Serializable {
     private String telf_propietario;
     private String tipo_vehiculo;
     private String modelo;
-    private String anyo;
+    private int anyo;
 
     @Size(max = 20)
     @Column(unique = true)
@@ -37,7 +37,7 @@ public class Coche implements Serializable {
     public Coche() {
     }
 
-    public Coche(String telf_propietario, String tipo_vehiculo, String modelo, String anyo, String matricula, String punto_salida, int num_plazas_libres, int num_plazas_ocupadas, String info_complementaria_coche, Usuario id_usuario) {
+    public Coche(String telf_propietario, String tipo_vehiculo, String modelo, int anyo, String matricula, String punto_salida, int num_plazas_libres, int num_plazas_ocupadas, String info_complementaria_coche, Usuario id_usuario) {
         this.telf_propietario = telf_propietario;
         this.tipo_vehiculo = tipo_vehiculo;
         this.modelo = modelo;
@@ -83,11 +83,11 @@ public class Coche implements Serializable {
         this.modelo = modelo;
     }
 
-    public String getAnyo() {
+    public int getAnyo() {
         return anyo;
     }
 
-    public void setAnyo(String anyo) {
+    public void setAnyo(int anyo) {
         this.anyo = anyo;
     }
 

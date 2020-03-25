@@ -66,6 +66,7 @@ POST http://localhost:8080/vamosJuntos/evento/agregar
 Content-Type: application/json
 
 {
+  "referencia": "111AAA",
   "nombre_evento": "otra cosa",
   "recinto": "mi casa",
   "ciudad": "barcelona",
@@ -73,13 +74,15 @@ Content-Type: application/json
   "info_complementaria_evento": "otras cosas"
 }
 
+<> 2020-03-25T050509.200.txt
+
 ###
 
 GET http://localhost:8080/vamosJuntos/evento/mostrar
 
 ###
 
-GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-14
+GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-25
 
 ###
 
@@ -91,7 +94,7 @@ PUT http://localhost:8080/vamosJuntos/evento/actualizar
 Content-Type: application/json
 
 {
-  "id_evento": 6,
+  "referencia": "111AAA",
   "nombre_evento": "otra actualizado",
   "recinto": "mi actualizado",
   "ciudad": "barcelona actualizado",
@@ -101,7 +104,7 @@ Content-Type: application/json
 
 ###
 
-DELETE http://localhost:8080/vamosJuntos/evento/eliminar?idEvento=6
+DELETE http://localhost:8080/vamosJuntos/evento/eliminar/referencia/111AAA
 
 ###
 
@@ -116,11 +119,11 @@ Content-Type: application/json
   "telf_propietario": "987456321",
   "tipo_vehiculo": "automovil",
   "modelo": "audi A1",
-  "anyo": "2000",
+  "anyo": 2000,
   "matricula": "2001GSW",
   "punto_salida": "Madrid",
-  "num_plazas_libres": "4",
-  "num_plazas_ocupadas": "1",
+  "num_plazas_libres": 4,
+  "num_plazas_ocupadas": 1,
   "info_complementaria_coche": "viaje de madrid a barcelona"
 }
 
@@ -154,6 +157,13 @@ Content-Type: application/json
 DELETE http://localhost:8080/vamosJuntos/coche/eliminar?matricula=2001GSW
 
 ########################################################################################################################
+
+# RESERVA
+
+POST http://localhost:8080/vamosJuntos/usuario/agregar
+
+###
+
 
 
 

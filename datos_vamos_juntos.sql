@@ -22,12 +22,12 @@ INSERT INTO usuario(nombre, apellido, dni, email) VALUES("raul", "garcia", "3366
 
 # COCHE
 INSERT INTO coche(telf_propietario, tipo_vehiculo, modelo, anyo, matricula, punto_salida, num_plazas_libres, num_plazas_ocupadas, info_complementaria_coche, id_usuario) 
-VALUES();
+VALUES("931789654", "Corsa", "A1", "1990", "1001ABC", "valencia", 5, 2, "viaje de valiencia a madrid", 1);
  
 
 # EVENTO
 INSERT INTO evento(nombre_evento, recinto, ciudad, fecha, hora, path_imagen, info_complementaria_evento) 
-VALUES();
+VALUES("", "", "", '', '', "", "");
 
 
 # RESERVA

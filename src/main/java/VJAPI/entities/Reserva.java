@@ -1,6 +1,7 @@
 package VJAPI.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 @Entity
@@ -9,6 +10,10 @@ public class Reserva implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_reservas;
+
+    @Size(max = 20)
+    @Column(unique = true)
+    private String referencia; // Sera la fererencia unica para poder ubicar una reserva
 
     @ManyToOne(targetEntity = Evento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinColumn(name = "id_evento_reserva") // campo o columna a crear en la tabla
@@ -22,10 +27,12 @@ public class Reserva implements Serializable {
     public Reserva() {
     }
 
-    public Reserva(Evento id_evento, Coche id_coche) {
+    public Reserva(String referencia, Evento id_evento, Coche id_coche) {
+        this.referencia = referencia;
         this.id_evento = id_evento;
         this.id_coche = id_coche;
     }
+
 
     // Setter ang Getter
     public Long getId_reservas() {
@@ -34,6 +41,14 @@ public class Reserva implements Serializable {
 
     public void setId_reservas(Long id_reservas) {
         this.id_reservas = id_reservas;
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
+    public void setReferencia(String referencia_reserva) {
+        this.referencia = referencia_reserva;
     }
 
     public Evento getId_evento() {

@@ -1,6 +1,7 @@
 package VJAPI.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -13,6 +14,11 @@ public class Evento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_evento;
+
+    @Size(max = 20)
+    @Column(unique = true)
+    private String referencia; // sera la referencia unica para poder ubicar el evento asociado al coche.
+
     private String nombre_evento; // lugar o accion a realizar con el coche
     private String recinto; // ubicacion donde va el coche
     private String ciudad; // lugar donde se obtiene el coche
@@ -28,7 +34,8 @@ public class Evento implements Serializable {
     public Evento() {
     }
 
-    public Evento(String nombre_evento, String recinto, String ciudad, LocalDate fecha, LocalTime hora, String path_imagen, String info_complementaria_evento) {
+    public Evento(@Size(max = 20) String referencia, String nombre_evento, String recinto, String ciudad, LocalDate fecha, LocalTime hora, String path_imagen, String info_complementaria_evento) {
+        this.referencia = referencia;
         this.nombre_evento = nombre_evento;
         this.recinto = recinto;
         this.ciudad = ciudad;
@@ -49,6 +56,14 @@ public class Evento implements Serializable {
 
     public String getNombre_evento() {
         return nombre_evento;
+    }
+
+    public String getReferencia() {
+        return referencia;
+    }
+
+    public void setReferencia(String referencia_evento) {
+        this.referencia = referencia_evento;
     }
 
     public void setNombre_evento(String nombre_evento) {

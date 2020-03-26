@@ -131,14 +131,6 @@ public class Coche implements Serializable {
         this.id_usuario = id_usuario;
     }
 
-    public List<Reserva> getListaCocheReserva() {
-        return listaCocheReserva;
-    }
-
-    public void setListaCocheReserva(List<Reserva> listaCocheReserva) {
-        this.listaCocheReserva = listaCocheReserva;
-    }
-
     public String getMatricula() {
         return matricula;
     }

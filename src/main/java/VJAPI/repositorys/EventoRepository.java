@@ -16,8 +16,7 @@ public interface EventoRepository extends CrudRepository<Evento, Long> {
      * de ejecuatr el programa, tambien hay que tenerlo en cuenta cuando se crean los nombre de los campos en las clases
      * ya que lo que se ponga ahi como nombre de propiedad aparecera aqui para crear un metodo.
      */
-
-
+    
     List<Evento> findEventoByFecha(LocalDate fechaEvento);
 
     List<Evento> findEventoByCiudad(String ciudad);

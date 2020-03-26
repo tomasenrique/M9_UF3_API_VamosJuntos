@@ -77,4 +77,12 @@ public class Usuario implements Serializable {
     public void setDni(String dni) {
         this.dni = dni;
     }
+
+    /**
+     * NOTA: ==>> IMPORTANTE
+     * No poner los getter y setter de la variable o atributo de clase que tiene una relacion con otra clase,
+     * en este caso este ==>> private List<Coche> listaCoches = new ArrayList<>();
+     * Dato que si se hace, esto generaria un error de redundancia colapsando la memoria, este atributo representa la
+     * relacion 1:N con la clase Coche y si se poner los metodos todo el programa fallara.
+     */
 }

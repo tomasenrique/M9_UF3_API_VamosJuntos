@@ -22,8 +22,8 @@ public class Evento implements Serializable {
     private String nombre_evento; // lugar o accion a realizar con el coche
     private String recinto; // ubicacion donde va el coche
     private String ciudad; // lugar donde se obtiene el coche
-    private LocalDate fecha; // Solo fecha yyyy-MM-dd
-    private LocalTime hora; // Solo hora HH:mm:ss
+    private LocalDate fecha; // Solo fecha yyyy-MM-dd, sera el dia en que se realiza el evento, ingresado de forma manual
+    private LocalTime hora; // Solo hora HH:mm:ss, sera la en que se realiza el evento, ingresado de forma manual
     private String path_imagen; // ubicacion de una imagen en el servidor
     private String info_complementaria_evento;
 
@@ -116,13 +116,5 @@ public class Evento implements Serializable {
 
     public void setInfo_complementaria_evento(String info_complementaria_evento) {
         this.info_complementaria_evento = info_complementaria_evento;
-    }
-
-    public List<Reserva> getListaEventoReserva() {
-        return listaEventoReserva;
-    }
-
-    public void setListaEventoReserva(List<Reserva> listaEventoReserva) {
-        this.listaEventoReserva = listaEventoReserva;
     }
 }

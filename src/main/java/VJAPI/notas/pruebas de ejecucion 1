@@ -70,11 +70,11 @@ Content-Type: application/json
   "nombre_evento": "otra cosa",
   "recinto": "mi casa",
   "ciudad": "barcelona",
+  "fecha": "2020-04-01",
+  "hora": "16:30",
   "path_imagen": "ubicacion imagen",
   "info_complementaria_evento": "otras cosas"
 }
-
-<> 2020-03-25T050509.200.txt
 
 ###
 
@@ -82,11 +82,15 @@ GET http://localhost:8080/vamosJuntos/evento/mostrar
 
 ###
 
-GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-03-25
+GET http://localhost:8080/vamosJuntos/evento/mostrar/fecha/2020-04-01
 
 ###
 
 GET http://localhost:8080/vamosJuntos/evento/mostrar/ciudad/barcelona
+
+###
+
+GET http://localhost:8080/vamosJuntos/evento/mostrar/referencia/111AAA
 
 ###
 
@@ -98,6 +102,8 @@ Content-Type: application/json
   "nombre_evento": "otra actualizado",
   "recinto": "mi actualizado",
   "ciudad": "barcelona actualizado",
+  "fecha": "2020-05-01",
+  "hora": "08:15",
   "path_imagen": "ubicacion imagen actualizado",
   "info_complementaria_evento": "otras cosas actualizado"
 }
@@ -160,12 +166,31 @@ DELETE http://localhost:8080/vamosJuntos/coche/eliminar?matricula=2001GSW
 
 # RESERVA
 
-POST http://localhost:8080/vamosJuntos/usuario/agregar
+POST http://localhost:8080/vamosJuntos/reserva/agregar?referenciaEvento=111AAA&matriculaCoche=2001GSW
 
 ###
 
+GET http://localhost:8080/vamosJuntos/reserva/mostrar
 
+###
 
+GET http://localhost:8080/vamosJuntos/reserva/mostrar/referencia/111AAA2001GSW
 
+###
 
+GET http://localhost:8080/vamosJuntos/reserva/mostrar/fecha/2020-03-26
 
+###
+
+PUT http://localhost:8080/vamosJuntos/reserva/actualizar/referencia/111AAA2001GSW
+Content-Type: application/json
+
+{
+  "referencia": "111AAA3001CBA"
+}
+
+###
+
+DELETE http://localhost:8080/vamosJuntos/reserva/eliminar/referencia/111AAA2001GSW
+
+###

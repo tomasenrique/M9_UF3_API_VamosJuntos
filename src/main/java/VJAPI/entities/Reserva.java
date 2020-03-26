@@ -3,6 +3,8 @@ package VJAPI.entities;
 import javax.persistence.*;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 @Entity
 public class Reserva implements Serializable {
@@ -15,11 +17,15 @@ public class Reserva implements Serializable {
     @Column(unique = true)
     private String referencia; // Sera la fererencia unica para poder ubicar una reserva
 
-    @ManyToOne(targetEntity = Evento.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    private LocalDate fecha; // Solo fecha yyyy-MM-dd, sera el dia que se hizo la reserva
+    private LocalTime hora; // Solo hora HH:mm:ss, sera la hora que se hizo la reserva
+
+    // OJO al poner  CascadeType.DETACH indicamos que solo se borre la reserva y no asociado a ella.
+    @ManyToOne(targetEntity = Evento.class, fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinColumn(name = "id_evento_reserva") // campo o columna a crear en la tabla
     private Evento id_evento;
 
-    @ManyToOne(targetEntity = Coche.class, fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne(targetEntity = Coche.class, fetch = FetchType.EAGER, cascade = CascadeType.DETACH)
     @JoinColumn(name = "id_coche_reserva") // campo o columna a crear en la tabla
     private Coche id_coche;
 
@@ -27,8 +33,10 @@ public class Reserva implements Serializable {
     public Reserva() {
     }
 
-    public Reserva(String referencia, Evento id_evento, Coche id_coche) {
+    public Reserva(@Size(max = 20) String referencia, LocalDate fecha, LocalTime hora, Evento id_evento, Coche id_coche) {
         this.referencia = referencia;
+        this.fecha = fecha;
+        this.hora = hora;
         this.id_evento = id_evento;
         this.id_coche = id_coche;
     }
@@ -67,4 +75,19 @@ public class Reserva implements Serializable {
         this.id_coche = id_coche;
     }
 
+    public LocalDate getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(LocalDate fechaReserva) {
+        this.fecha = fechaReserva;
+    }
+
+    public LocalTime getHora() {
+        return hora;
+    }
+
+    public void setHora(LocalTime horaReserva) {
+        this.hora = horaReserva;
+    }
 }

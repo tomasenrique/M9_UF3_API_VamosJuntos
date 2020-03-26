@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 
 @RestController
 @RequestMapping(path = "/vamosJuntos/evento")
@@ -20,17 +19,14 @@ public class EventoController {
     private static final Logger log = LoggerFactory.getLogger(EventoController.class);
 
     @Autowired
-    EventoRepository eventoRepository;
+    private EventoRepository eventoRepository;
 
 
-    // Agrega un evento
+    // Agrega un evento, indicando de forma manuel el dia y la hora en que se realizara el evento
     @PostMapping("/agregar")
     @ResponseBody
     public String addEvent(@RequestBody Evento evento) {
         try {
-            evento.setFecha(LocalDate.now());
-            log.info("fecha: " + LocalDate.now());
-            evento.setHora(LocalTime.now());
             eventoRepository.save(evento);
             return "Evento guardado en base de datos";
         } catch (DataIntegrityViolationException e) {
@@ -97,9 +93,9 @@ public class EventoController {
             eventoActualizar.setCiudad(evento.getCiudad());
             eventoActualizar.setPath_imagen(evento.getPath_imagen());
             eventoActualizar.setInfo_complementaria_evento(evento.getInfo_complementaria_evento());
-            // se actualiza la fecha y la hora tomadas del sistema
-            eventoActualizar.setHora(LocalTime.now());
-            eventoActualizar.setFecha(LocalDate.now());
+            // se actualiza la fecha y la hora de forma manual
+            eventoActualizar.setHora(evento.getHora());
+            eventoActualizar.setFecha(evento.getFecha());
             eventoRepository.save(eventoActualizar); // Se actualiza el evento con los datos proporcionados
             return "Evento actualizado.";
         } else return "El evento a actualizar no existe.";
